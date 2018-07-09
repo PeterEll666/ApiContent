@@ -1,0 +1,25 @@
+﻿<div class="modal-header">
+    <div class="modal-title">Login</div>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2">User</div>
+            <div class="col-xs-10">
+                <input type="text" ng-model="vm.username" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">Password</div>
+            <div class="col-xs-10">
+                <input type="password" ng-model="vm.password" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" ng-click="vm.cancel()">Cancel</button>
+    <button type="button" ng-click="vm.ok()">Login</button>
+</div>
+
+

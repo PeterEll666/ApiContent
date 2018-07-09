@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <link href="Content/bootstrap.css" rel="stylesheet"/>
+    <link href="Content/main.css" rel="stylesheet"/>
+    <link href="Content/toastr.css" rel="stylesheet"/>
+
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <!--<script src="scripts/angular-sanitize.js"></script>-->
+    <!--<script src="scripts/angular-ui/ui-bootstrap.js"></script>-->
+    <script src="scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+
+    <script src="scripts/jquery-3.3.1.js"></script>
+
+    <script src="scripts/umd/popper.js"></script>
+    <script src="scripts/toastr.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/controllers/userscontroller.js"></script>
+    <script src="app/controllers/loginmodalcontroller.js"></script>
+    <script src="app/services/sessioninjector.js"></script>
+    <script src="app/services/usersservice.js"></script>
+    <script src="app/controllers/pagescontroller.js"></script>
+    <script src="app/services/pagesservice.js"></script>
+
+    <title></title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <div class="topheader container-fluid" ng-controller="userscontroller as vm">
+        <div class="row">
+            <div class="col-xs-7"></div>
+            <div class="col-xs-3">{{vm.loggedinas}}</div>
+            <div class="col-xs-2">
+                <button type="button" ng-click="vm.OpenModal()" ng-show="vm.loggedinas ==''">Login</button>
+                <button type="button" ng-click="vm.Logout()" ng-show="vm.loggedinas !=''">Logout</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" ng-controller="pagescontroller as vm">
+        <div class="row">
+            <div class="col-xs-1">&nbsp;</div>
+            <div class="col-xs-11">
+                <button type="button" ng-click="vm.GetPage()">Load page 1</button>
+            </div>
+        </div>
+        <div class="row">
+        <p ng-bind-html="vm.pageData" ng-mouseover="vm.MouseOver($event)" ng-mouseleave="vm.MouseLeave($event)"></p>
+        </div>
+    </div>
+
+</body>
+</html>
